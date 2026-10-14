@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "copy hospital data",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -48,7 +48,11 @@
 				"outputs": [
 					{
 						"referenceName": "DS_Parquet",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "landing",
+							"folder": "test"
+						}
 					}
 				]
 			}
