@@ -11,21 +11,13 @@
 			"type": "string",
 			"defaultValue": "https://caresyncprojadls.dfs.core.windows.net/"
 		},
+		"LS_AzureDatabricks_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "1015-164448-ar7zrq8y"
+		},
 		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://caresync-keyvaultkey.vault.azure.net/"
-		},
-		"LS_PostgreSql_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "ep-red-tooth-b4owxxcx-pooler.c-6.us-east-2.aws.neon.tech"
-		},
-		"LS_PostgreSql_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "neondb"
-		},
-		"LS_PostgreSql_properties_typeProperties_username": {
-			"type": "string",
-			"defaultValue": "neondb_owner"
 		},
 		"LS_AzureSqlDatabase_properties_typeProperties_server": {
 			"type": "string",
@@ -39,9 +31,17 @@
 			"type": "string",
 			"defaultValue": "nd_user"
 		},
-		"LS_AzureDatabricks_properties_typeProperties_existingClusterId": {
+		"LS_PostgreSql_properties_typeProperties_server": {
 			"type": "string",
-			"defaultValue": "1015-164448-ar7zrq8y"
+			"defaultValue": "ep-red-tooth-b4owxxcx-pooler.c-6.us-east-2.aws.neon.tech"
+		},
+		"LS_PostgreSql_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "neondb"
+		},
+		"LS_PostgreSql_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "neondb_owner"
 		},
 		"containerUri": {
 			"type": "string",
@@ -76,14 +76,8 @@
 					"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
 						"value": "[parameters('LS_AzureKeyVault_properties_typeProperties_baseUrl')]"
 					},
-					"LS_PostgreSql_properties_typeProperties_server": {
-						"value": "[parameters('LS_PostgreSql_properties_typeProperties_server')]"
-					},
-					"LS_PostgreSql_properties_typeProperties_database": {
-						"value": "[parameters('LS_PostgreSql_properties_typeProperties_database')]"
-					},
-					"LS_PostgreSql_properties_typeProperties_username": {
-						"value": "[parameters('LS_PostgreSql_properties_typeProperties_username')]"
+					"LS_AzureDatabricks_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('LS_AzureDatabricks_properties_typeProperties_existingClusterId')]"
 					},
 					"LS_AzureSqlDatabase_properties_typeProperties_server": {
 						"value": "[parameters('LS_AzureSqlDatabase_properties_typeProperties_server')]"
@@ -94,8 +88,14 @@
 					"LS_AzureSqlDatabase_properties_typeProperties_userName": {
 						"value": "[parameters('LS_AzureSqlDatabase_properties_typeProperties_userName')]"
 					},
-					"LS_AzureDatabricks_properties_typeProperties_existingClusterId": {
-						"value": "[parameters('LS_AzureDatabricks_properties_typeProperties_existingClusterId')]"
+					"LS_PostgreSql_properties_typeProperties_server": {
+						"value": "[parameters('LS_PostgreSql_properties_typeProperties_server')]"
+					},
+					"LS_PostgreSql_properties_typeProperties_database": {
+						"value": "[parameters('LS_PostgreSql_properties_typeProperties_database')]"
+					},
+					"LS_PostgreSql_properties_typeProperties_username": {
+						"value": "[parameters('LS_PostgreSql_properties_typeProperties_username')]"
 					}
 				}
 			},
