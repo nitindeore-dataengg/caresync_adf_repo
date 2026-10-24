@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "copy hospital data",
+				"description": "This is a change in description.",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
