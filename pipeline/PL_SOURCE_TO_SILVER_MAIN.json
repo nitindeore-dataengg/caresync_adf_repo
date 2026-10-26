@@ -26,10 +26,7 @@
 					},
 					"dataset": {
 						"referenceName": "AzureSqlTable",
-						"type": "DatasetReference",
-						"parameters": {
-							"schema": "Dev_Schema"
-						}
+						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}

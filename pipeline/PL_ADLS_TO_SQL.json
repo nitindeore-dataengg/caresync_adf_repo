@@ -47,7 +47,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"table_name": {
-								"value": "@pipeline().parameters.table_name_file",
+								"value": "@pipeline().parameters.table_name",
 								"type": "Expression"
 							}
 						}
@@ -62,7 +62,7 @@
 			}
 		],
 		"parameters": {
-			"table_name_file": {
+			"table_name": {
 				"type": "string",
 				"defaultValue": "customers"
 			},
