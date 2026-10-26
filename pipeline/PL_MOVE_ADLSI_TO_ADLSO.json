@@ -20,6 +20,15 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"modifiedDatetimeStart": {
+								"value": "@variables('current_time')",
+								"type": "Expression"
+							},
+							"wildcardFolderPath": {
+								"value": "@concat(pipeline().parameters.container,'/',pipeline().parameters.folder)",
+								"type": "Expression"
+							},
+							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -59,8 +68,40 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "current_time",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "current_time",
+					"value": {
+						"value": "@utcNow()",
+						"type": "Expression"
+					}
+				}
 			}
 		],
+		"parameters": {
+			"container": {
+				"type": "string",
+				"defaultValue": "source"
+			},
+			"folder": {
+				"type": "string",
+				"defaultValue": "input"
+			}
+		},
+		"variables": {
+			"current_time": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
