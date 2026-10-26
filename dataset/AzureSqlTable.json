@@ -5,28 +5,8 @@
 			"referenceName": "LS_AzureSqlDatabase",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"table_name": {
-				"type": "string",
-				"defaultValue": "customers"
-			},
-			"schema": {
-				"type": "string",
-				"defaultValue": "Dev_Schema"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
-		"typeProperties": {
-			"schema": {
-				"value": "@dataset().schema",
-				"type": "Expression"
-			},
-			"table": {
-				"value": "@dataset().table_name",
-				"type": "Expression"
-			}
-		}
+		"schema": []
 	}
 }

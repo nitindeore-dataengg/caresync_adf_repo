@@ -56,17 +56,7 @@
 				"outputs": [
 					{
 						"referenceName": "AzureSqlTable",
-						"type": "DatasetReference",
-						"parameters": {
-							"table_name": {
-								"value": "@pipeline().parameters.table_name_file",
-								"type": "Expression"
-							},
-							"schema": {
-								"value": "@pipeline().parameters.schema",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				]
 			}
