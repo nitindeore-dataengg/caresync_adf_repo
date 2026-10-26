@@ -15,10 +15,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().table_name",
-					"type": "Expression"
-				},
+				"fileName": "customers.csv",
 				"folderPath": "input",
 				"fileSystem": "source"
 			},
