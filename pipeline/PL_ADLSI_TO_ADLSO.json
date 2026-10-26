@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Adls To Adls",
+				"name": "Adlsi To Adlso",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -49,43 +49,18 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "input_csv",
-						"type": "DatasetReference",
-						"parameters": {
-							"folder": "input"
-						}
+						"referenceName": "Ds_adls_input",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "adls_output",
+						"referenceName": "Ds_adls_output",
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "Set incremental time",
-				"type": "SetVariable",
-				"dependsOn": [],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "current_date",
-					"value": {
-						"value": "@formatDateTime(utcNow(),'yyyy-MM-dd')",
-						"type": "Expression"
-					}
-				}
 			}
 		],
-		"variables": {
-			"current_date": {
-				"type": "String"
-			}
-		},
 		"annotations": []
 	}
 }
