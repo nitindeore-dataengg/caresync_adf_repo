@@ -50,7 +50,10 @@
 				"inputs": [
 					{
 						"referenceName": "input_csv",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"folder": "input"
+						}
 					}
 				],
 				"outputs": [
