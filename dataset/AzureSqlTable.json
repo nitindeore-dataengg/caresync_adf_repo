@@ -7,18 +7,26 @@
 		},
 		"parameters": {
 			"table_name": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "customers"
 			},
 			"schema": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "Dev_Schema"
 			}
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "Dev_Schema",
-			"table": "customers"
+			"schema": {
+				"value": "@dataset().schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().table_name",
+				"type": "Expression"
+			}
 		}
 	}
 }
