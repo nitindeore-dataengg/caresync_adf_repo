@@ -225,7 +225,11 @@
 								},
 								"dataset": {
 									"referenceName": "AzureSqlTable",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"table_name": "fbjhdsbv",
+										"schema": "jsbfs"
+									}
 								}
 							}
 						},
