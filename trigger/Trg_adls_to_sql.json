@@ -8,6 +8,10 @@
 				"pipelineReference": {
 					"referenceName": "PL_ADLS_TO_SQL",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"table_name": "orders",
+					"schema": "Dev_Schema"
 				}
 			}
 		],
