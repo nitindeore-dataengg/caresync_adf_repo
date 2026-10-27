@@ -1,0 +1,29 @@
+{
+	"name": "Trg_adls_to_sql",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_ADLS_TO_SQL",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"table_name": "orders",
+					"schema": "Dev_Schema"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2026-10-27T05:37:00",
+				"endTime": "2026-10-28T05:37:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
