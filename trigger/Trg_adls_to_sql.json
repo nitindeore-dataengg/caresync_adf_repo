@@ -2,7 +2,7 @@
 	"name": "Trg_adls_to_sql",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {
