@@ -32,6 +32,12 @@
 		"LS_PostgreSql_properties_typeProperties_username": {
 			"value": "neondb_owner"
 		},
+		"Trg_adls_to_sql_properties_PL_ADLS_TO_SQL_parameters_table_name": {
+			"value": "orders"
+		},
+		"Trg_adls_to_sql_properties_PL_ADLS_TO_SQL_parameters_schema": {
+			"value": "Dev_Schema"
+		},
 		"containerUri": {
 			"value": ""
 		},
