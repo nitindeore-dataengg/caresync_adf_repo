@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "Dev_Schema",
-			"table": "customers"
+			"table": "locations"
 		}
 	}
 }

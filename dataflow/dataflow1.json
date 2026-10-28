@@ -5,14 +5,32 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "AzureSqlTableDs",
+						"type": "DatasetReference"
+					},
 					"name": "source1"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "filter1"
+				},
+				{
+					"name": "sort1"
+				}
+			],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1"
+				"     validateSchema: false,",
+				"     limit: 100,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source1",
+				"source1 filter(ERROR_FUNCTION('')) ~> filter1",
+				"filter1 sort(asc(ERROR_FUNCTION(''), true),",
+				"     asc(ERROR_FUNCTION(''), true),",
+				"     caseInsensitive: true) ~> sort1"
 			]
 		}
 	}
