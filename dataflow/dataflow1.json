@@ -27,7 +27,7 @@
 				"     limit: 100,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source1",
-				"source1 filter(ERROR_FUNCTION('')) ~> filter1",
+				"source1 filter(city == 'London') ~> filter1",
 				"filter1 sort(asc(ERROR_FUNCTION(''), true),",
 				"     asc(ERROR_FUNCTION(''), true),",
 				"     caseInsensitive: true) ~> sort1"
