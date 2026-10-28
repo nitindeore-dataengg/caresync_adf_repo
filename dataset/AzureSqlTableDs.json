@@ -1,0 +1,16 @@
+{
+	"name": "AzureSqlTableDs",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Dev_Schema",
+			"table": "customers"
+		}
+	}
+}
