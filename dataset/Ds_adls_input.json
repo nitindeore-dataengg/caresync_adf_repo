@@ -5,12 +5,20 @@
 			"referenceName": "LS_ADLS",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"tablename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "departments.csv",
+				"fileName": {
+					"value": "@dataset().tablename",
+					"type": "Expression"
+				},
 				"folderPath": "input",
 				"fileSystem": "source"
 			},

@@ -23,6 +23,9 @@
 			"transformations": [
 				{
 					"name": "Mainjoin"
+				},
+				{
+					"name": "selectcolumn"
 				}
 			],
 			"scriptLines": [
@@ -53,7 +56,19 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     partitionBy('hash', 1),",
-				"     broadcast: 'auto')~> Mainjoin"
+				"     broadcast: 'auto')~> Mainjoin",
+				"Mainjoin select(mapColumn(",
+				"          first_name,",
+				"          last_name,",
+				"          email,",
+				"          department_id = employee@department_id,",
+				"          salary,",
+				"          department_name,",
+				"          location_id",
+				"     ),",
+				"     partitionBy('hash', 1),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> selectcolumn"
 			]
 		}
 	}
