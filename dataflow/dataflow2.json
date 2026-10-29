@@ -10,10 +10,21 @@
 						"type": "DatasetReference"
 					},
 					"name": "employee"
+				},
+				{
+					"dataset": {
+						"referenceName": "Ds_adls_input",
+						"type": "DatasetReference"
+					},
+					"name": "departments"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "Mainjoin"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          employee_id as short,",
@@ -27,7 +38,22 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> employee"
+				"     ignoreNoFilesFound: false,",
+				"     partitionBy('hash', 1)) ~> employee",
+				"source(output(",
+				"          department_id as short,",
+				"          department_name as string,",
+				"          location_id as short",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> departments",
+				"employee, departments join(employee@department_id == departments@department_id,",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     partitionBy('hash', 1),",
+				"     broadcast: 'auto')~> Mainjoin"
 			]
 		}
 	}
